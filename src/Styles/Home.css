@@ -209,3 +209,28 @@
     justify-content: space-between;
     align-items: center;
 }
+.modal_container-top{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    
+}
+.modal_overlay{
+    background-color:yellow
+}
+.modal_content{
+    font-family: var(--font-secondary);
+    margin-top: 10px;
+}
+textarea{
+    color: red;
+}
+.hljs{
+    color:transparent !important;
+    
+}
+.hljs::selection{
+    color: transparent;
+}

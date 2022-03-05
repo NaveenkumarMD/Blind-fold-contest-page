@@ -27,7 +27,18 @@
 .App-link {
   color: #61dafb;
 }
-
+select{
+  background-color: #2f3038;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+option:hover{
+  background-color:green;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
