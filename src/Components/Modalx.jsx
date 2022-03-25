@@ -22,7 +22,7 @@ const customStyles = {
 
 
 
-function Modalx({times,content,title,modalIsOpen,setIsOpen,closecontest}) {
+function Modalx({times,content,title,modalIsOpen,setIsOpen,closecontest,callopenfullscreen}) {
   let subtitle;
 
   function openModal() {
@@ -36,9 +36,10 @@ function Modalx({times,content,title,modalIsOpen,setIsOpen,closecontest}) {
 
   function closeModal() {
     setIsOpen(false);
+    callopenfullscreen()
   }
   useEffect(()=>{
-    if(3-times<=0){
+    if(6-times<=0){
       closecontest()
     }
   },[times])
@@ -50,8 +51,7 @@ function Modalx({times,content,title,modalIsOpen,setIsOpen,closecontest}) {
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
-        contentLabel="Example Modal"    
-   
+        contentLabel="Example Modal"   
 
       >
           <div className='modal_container-top'>
@@ -64,7 +64,7 @@ function Modalx({times,content,title,modalIsOpen,setIsOpen,closecontest}) {
              {content}
             </div>
             <div>
-                {3-times} attempts left
+                {6-times} attempts left
             </div>
       </Modal>
     </div>

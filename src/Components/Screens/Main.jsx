@@ -41,6 +41,7 @@ function Main() {
     const [modalIsOpen, setIsOpen] = useState(false)
     time.setSeconds(time.getSeconds() + 1200);
     useEffect(() => {
+        contentref.current.style.filter = "blur(5px)"
         document.addEventListener("keyup", (e) => {
             handlecodechange()
         })
@@ -93,7 +94,6 @@ function Main() {
         var htmlelement = document.documentElement
         htmlelement.requestFullscreen()
         setfullscreen(true)
-
     }
     const handlefullscreenclick = () => {
         if (!document.fullscreenElement) {
@@ -115,10 +115,10 @@ function Main() {
             code: code,
             language: language
         }
-        if (code.length === 0) {
-            alert("Code is empty")
-            return
-        }
+        // if (code.length === 0) {
+        //     alert("Code is empty")
+        //     return
+        // }
         try {
             const docref = await addDoc(collection(db, "data"), data)
             console.log("Code submitted successfully")
@@ -149,6 +149,13 @@ function Main() {
         }, [200])
 
     }
+    const openfullscreenagain=()=>{
+        if (!document.fullscreenElement) {
+            var htmlelement = document.documentElement
+            htmlelement.requestFullscreen()
+            setfullscreen(true)
+        }
+    }
     return (
         <>
             <div ref={loaderref} style={{ position: "fixed", display: "flex", width: "100%", marginTop: "10%", marginLeft: "45%", justifyContent: "center", alignItems: "center", zIndex: 999999 }}>
@@ -160,6 +167,7 @@ function Main() {
 
                 <Modalx times={cheatcount} content={warningcontent} title={modaltitle}
                     modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} closecontest={handleexpire}
+                    callopenfullscreen={openfullscreenagain}
                 />
                 <div className='navbar navbarx'>
                     <div className='navbar-logo'>
@@ -180,15 +188,16 @@ function Main() {
 
                     <div className="section3" ref={contentref}>
                         <div>
-                            Given an array of integers and a positive integer , determine the number of  pairs where  and  +  is divisible by .
+                        Consider an mxn matrix in which you have to move from one point to another. Four moves are possible. Up, Down, Left, Right, and U, D, L, R represent each move respectively. You are provided with a string that represents the directions to move. Find the smallest distance from the initial to the final position.
+
                         </div>
-                        <div className='h4'>
+                        {/* <div className='h4'>
                             Example
                         </div>
                         <div>
                             Three pairs meet the criteria:  and .
-                        </div>
-                        <div className='h4'>
+                        </div> */}
+                        {/* <div className='h4'>
                             Function description
                         </div>
                         <div>
@@ -199,43 +208,52 @@ function Main() {
                             int n: the length of array<br />
                             int ar[n]: an array of integers<br />
                             int k: the integer diviso<br />
-                        </div>
-                        <div className='h4'>
+                        </div> */}
+                        {/* <div className='h4'>
                             Returns
                         </div>
                         <div>
                             - int: the number of pairs
-                        </div>
+                        </div> */}
                         <div className='h4'>
                             Input format
                         </div>
                         <div>
-                            The first line contains  space-separated integers,  and .
-                            The second line contains  space-separated integers, each a value of .
+                        The first line of input contains two integer m,n<br/>
+The second line contains a string that represents the directions to move.
+                        </div>
+                        <div className='h4'>
+                            Output format
+                        </div>
+                        <div>
+                        An integer representing the smallest possible distance.
                         </div>
                         <div className='h4'>
                             Constarints
                         </div>
-                        <div>
-                            - int: the number of pairs
+                        <div className='code'>
+                            {
+                        `1<m,n<100 `}<br/>
+                        {`2<len(string)<10000`}
                         </div>
                         <div className='h4'>
                             Sample input
                         </div>
                         <div className='code'>
-                            - int: the number of pairs
+                        {`5 5`}<br/>
+                            {`RDLURRD`}
                         </div>
                         <div className='h4'>
                             Sample output
                         </div>
                         <div className='code'>
-                            - int: the number of pairs
+                        3
                         </div>
                         <div className='h4'>
                             Explanation
                         </div>
                         <div>
-                            - int: the number of pairs
+                        After moving as per the directions you land at (2,1) and the smallest possible distance is 3
                         </div>
 
                     </div>
