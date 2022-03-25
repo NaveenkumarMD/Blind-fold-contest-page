@@ -39,7 +39,7 @@ function Main() {
     const time = new Date();
     const mainref = useRef(null)
     const [modalIsOpen, setIsOpen] = useState(false)
-    time.setSeconds(time.getSeconds() + 1200);
+    time.setSeconds(time.getSeconds() + 1500);
     useEffect(() => {
         contentref.current.style.filter = "blur(5px)"
         document.addEventListener("keyup", (e) => {

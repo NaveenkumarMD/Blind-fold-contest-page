@@ -62,8 +62,15 @@ function Home() {
                 </div>
             </div>
             <div className='content1'>
-                <div className='h1'>Blind code</div>
-                <p>Code whaterver you want Code whaterver you want Code whaterver you want  </p>
+                <div className='h1'>Code behind</div>
+                <p>If you’re good at coding, we have
+something better for you. Participants
+have to code and solve a problem
+WITHOUT LOOKING AT THE EDITOR.
+Not so easy now is it? Even better….
+There is a time limit. If all these wont
+stop you. We admit it…. you deserve
+this cash award… Good Luck.</p>
             </div>
             <div className='content2'>
                 <div className='input-con'>
