@@ -39,7 +39,7 @@ function Main() {
     const time = new Date();
     const mainref = useRef(null)
     const [modalIsOpen, setIsOpen] = useState(false)
-    time.setSeconds(time.getSeconds() + 1500);
+    time.setSeconds(time.getSeconds() + 2400);
     useEffect(() => {
         contentref.current.style.filter = "blur(5px)"
         document.addEventListener("keyup", (e) => {
@@ -120,7 +120,7 @@ function Main() {
         //     return
         // }
         try {
-            const docref = await addDoc(collection(db, "data"), data)
+            const docref = await addDoc(collection(db, "datax"), data)
             console.log("Code submitted successfully")
             localStorage.clear()
             navigator("/code", {
@@ -188,8 +188,7 @@ function Main() {
 
                     <div className="section3" ref={contentref}>
                         <div>
-                        Consider an mxn matrix in which you have to move from one point to another. Four moves are possible. Up, Down, Left, Right, and U, D, L, R represent each move respectively. You are provided with a string that represents the directions to move. Find the smallest distance from the initial to the final position.
-
+                        Given an <b>mxn</b> matrix of 0 and 1. The matrix contains alternate 0 and 1. Due to some reasons some of the bits are changed so that the matrix does not follow the pattern. The task is to find the minimal number of changes to be made so that matrix follows the pattern
                         </div>
                         {/* <div className='h4'>
                             Example
@@ -219,41 +218,42 @@ function Main() {
                             Input format
                         </div>
                         <div>
-                        The first line of input contains two integer m,n<br/>
-The second line contains a string that represents the directions to move.
+                        The first line contains the two integers m and n<br/>
+                        The next line contains mxn integers
                         </div>
                         <div className='h4'>
                             Output format
                         </div>
                         <div>
-                        An integer representing the smallest possible distance.
+                        Integer representing number of changes to be made.
                         </div>
                         <div className='h4'>
-                            Constarints
+                            Constraints
                         </div>
                         <div className='code'>
                             {
-                        `1<m,n<100 `}<br/>
-                        {`2<len(string)<10000`}
+                        `1<m,n<100`}<br/>
+                      
                         </div>
                         <div className='h4'>
                             Sample input
                         </div>
                         <div className='code'>
-                        {`5 5`}<br/>
-                            {`RDLURRD`}
+                        {`3 3`}<br/>
+                            {`0 1 0 `}<br/>{`1 1 1`}<br/>{` 0 1 0`}
                         </div>
                         <div className='h4'>
                             Sample output
                         </div>
                         <div className='code'>
-                        3
+                        1
                         </div>
                         <div className='h4'>
                             Explanation
                         </div>
                         <div>
-                        After moving as per the directions you land at (2,1) and the smallest possible distance is 3
+                        The elements at (1,1) violate the property. 
+therefore 1 change must be made.
                         </div>
 
                     </div>
