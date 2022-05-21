@@ -1,0 +1,102 @@
+.nav{
+    
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 20px 50px;
+}
+.nav-logo{
+    width: 50px;
+    height: 50px;
+}
+.nav-logo>img{
+    width: 100%;
+    height: 100%;
+}
+.nav-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.nav-links>.link{
+    text-decoration: none;
+    color: var(--fg-white);
+    font-size: 18px;
+    font-family: var(--font-secondary);
+    font-weight: 900;
+}
+.startpage{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center ;
+    margin-top: 20px;
+    padding: 100px;
+}
+.startpage-img{
+    width: 600px;
+    height: auto;
+}
+.startpage-img>img{
+    width: 100%;
+    height: 100%;
+
+}
+.startpage-content{
+    margin-left: 50px;
+}
+.startpage-content>.h1{
+    font-size: 45px;
+    margin: none;
+}
+.startpage-content>.p{
+    font-size: 16px;
+    margin: none;
+    color: rgb(219, 217, 217);
+    font-family: var(--font-secondary); 
+    font-weight: 600;
+    width: 500px;
+    margin-top: 10px;
+    line-height: 25px;
+}
+.startpage-content>.btns{
+    display: flex;
+    flex-direction: row;
+    gap:30px;
+    align-items: center;
+    margin-top: 50px;
+}
+.btns>.primary{
+    background-color: var(--fg-green);
+    color: var(--fg-white);
+    font-size: 18px;
+    font-family: var(--font-primary);
+    font-weight: 900;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+.btns>.primary:hover{
+    box-shadow: 0px 0px 10px rgba(44, 192, 42, 0.5);   
+}
+.btns>.secondary{
+    background-color: transparent;
+    color: var(--fg-green);
+    font-size: 18px;
+    font-family: var(--font-primary);
+    font-weight: 900;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid var(--fg-green);
+
+}
+.btns>.secondary:hover{
+    box-shadow: 0px 0px 10px rgba(44, 192, 42, 0.5);   
+}
